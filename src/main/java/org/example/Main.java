@@ -59,7 +59,7 @@ public class Main {
      * Circumference: 18.85
      * Area: 28.27 */
     public static String circleInfo(int radius) {
-        return "Radius: " + radius + "\nCircumference:" + Math.round(circleCircum(radius)) + "\nArea: " +Math.round(circleArea(radius));
+        return  "Radius: " + radius + "\nCircumference:" + circleCircum(radius) + "\nArea: " +circleArea(radius);
     }
 
     /** Method 4
