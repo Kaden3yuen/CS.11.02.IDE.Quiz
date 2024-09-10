@@ -2,6 +2,32 @@ package org.example;
 
 public class Main {
 
+    public static void main(String[] args) {
+
+        System.out.println(circleArea(5));
+        System.out.println(circleArea(9));
+
+        System.out.println(Main.circleCircum(5));;
+        System.out.println(Main.circleCircum(9));;
+
+        System.out.println(Main.circleInfo(5));
+        System.out.println(Main.circleInfo(9));
+
+        System.out.println(Main.minutesToHoursMinutes(267));
+        System.out.println(Main.minutesToHoursMinutes(512));
+
+        System.out.println(Main.twentyFourToTwelve("13:43"));
+        System.out.println( Main.twentyFourToTwelve("14:15"));
+
+        System.out.println(Main.distanceBetweenTwoPoints(3,4,1,7));
+        System.out.println(Main.distanceBetweenTwoPoints(7,9,1,1));
+
+        System.out.println(Main.fahrenheitToCelsius(100));
+        System.out.println(Main.fahrenheitToCelsius(78));
+
+        System.out.println(Main.celsiusToFahrenheit(35));
+        System.out.println(Main.celsiusToFahrenheit(12));
+    }
     /** Method 1
      * Method name: circleArea
      * Method return type: double
@@ -9,7 +35,7 @@ public class Main {
      * Method signature: circleArea(int)
      * Returns the area of a circle. */
     public static double circleArea(int radius) {
-        return 0;
+        return (double) Math.round(Math.PI * radius * radius*100)/100;
     }
 
     /** Method 2
@@ -19,7 +45,7 @@ public class Main {
      * Method signature: circleCircum(int)
      * Returns the circumference of a circle. */
     public static double circleCircum(int radius) {
-        return 0;
+        return (double) Math.round(Math.PI * radius * 2*100)/100;
     }
 
     /** Method 3
@@ -33,7 +59,7 @@ public class Main {
      * Circumference: 18.85
      * Area: 28.27 */
     public static String circleInfo(int radius) {
-        return null;
+        return "Radius: " + radius + "\nCircumference:" + Math.round(circleCircum(radius)) + "\nArea: " +Math.round(circleArea(radius));
     }
 
     /** Method 4
@@ -44,8 +70,7 @@ public class Main {
      * Returns a String detailing the number of hours and minutes.
      * Format of returned String: e.g. 3 hours and 46 minutes */
     public static String minutesToHoursMinutes(int minutes) {
-
-        return null;
+        return minutes/60 + " hours and " + minutes%60 + " minutes.";
     }
 
     /** Method 5
@@ -58,7 +83,11 @@ public class Main {
      * */
     public static String twentyFourToTwelve(String time) {
 
-        return null;
+        int hourInt = Integer.parseInt(time.substring(0,2))-12;
+        String hourString = "" + hourInt;
+        int minuteInt = Integer.parseInt(time.substring(3,5));
+        String minuteString = "" + minuteInt;
+        return hourString + ":" + minuteString + " pm";
 
     }
 
@@ -69,9 +98,7 @@ public class Main {
      * Method signature: distanceBetweenTwoPoints(int,int,int,int)
      * Returns the distance between two points */
     public static double distanceBetweenTwoPoints(int x1, int y1, int x2, int y2) {
-
-        return 0;
-
+        return (double) Math.round(Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2))*100)/100;
     }
 
     /** Method 7
@@ -81,8 +108,7 @@ public class Main {
      * Method signature: fahrenheitToCelsius(int)
      * Returns the degrees celsius equivalent of the degrees in fahrenheit */
     public static double fahrenheitToCelsius(int fahrenheit) {
-
-        return 0;
+        return (double) Math.round((fahrenheit-32.0)*5/9*100)/100;
 
     }
 
@@ -93,9 +119,7 @@ public class Main {
      * Method signature: celsiusToFahrenheit(int)
      * Returns the degrees fahrenheit equivalent of the degrees in celsius */
     public static double celsiusToFahrenheit(int celsius) {
-
-        return 0;
-
+        return(double) Math.round(((celsius*9.0/5.0)+32.0)*100)/100;
     }
 
 }
